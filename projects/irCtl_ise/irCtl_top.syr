@@ -1,0 +1,696 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.33 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.33 secs
+ 
+--> Reading design: irCtl_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "irCtl_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "irCtl_top"
+Output Format                      : NGC
+Target Device                      : xc6slx4-2-tqg144
+
+---- Source Options
+Top Module Name                    : irCtl_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\spiSlave.vhd" into library work
+Parsing entity <spiSlave>.
+Parsing architecture <RTL> of entity <spislave>.
+Parsing VHDL file "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irEncoder.vhd" into library work
+Parsing entity <irEncoder>.
+Parsing architecture <Behavioral> of entity <irencoder>.
+Parsing VHDL file "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irDecoder.vhd" into library work
+Parsing entity <irDecoder>.
+Parsing architecture <Behavioral> of entity <irdecoder>.
+Parsing VHDL file "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\clks.vhd" into library work
+Parsing entity <clks>.
+Parsing architecture <Behavioral> of entity <clks>.
+Parsing VHDL file "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irCtl_top.vhd" into library work
+Parsing entity <irCtl_top>.
+Parsing architecture <Behavioral> of entity <irctl_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <irCtl_top> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <clks> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <irDecoder> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <irEncoder> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <spiSlave> (architecture <RTL>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <irCtl_top>.
+    Related source file is "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irCtl_top.vhd".
+        SYS_RST_VAL = 100000
+INFO:Xst:3210 - "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irCtl_top.vhd" line 161: Output port <IR_RX_ERR_FLG> of the instance <irDecoderComp> is unconnected or connected to loadless signal.
+    Found 32-bit register for signal <spiData>.
+    Found 2-bit register for signal <irRxDataState>.
+    Found 2-bit register for signal <dinCount>.
+    Found 1-bit register for signal <rxNewData>.
+    Found 17-bit register for signal <sysRstCnt>.
+    Found finite state machine <FSM_0> for signal <irRxDataState>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 3                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | PWR_4_o_sysRstCnt[16]_equal_6_o (negative)       |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | irrxdatastate_idle                             |
+    | Power Up State     | irrxdatastate_idle                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 17-bit adder for signal <sysRstCnt[16]_GND_4_o_add_1_OUT> created at line 218.
+    Found 2-bit adder for signal <dinCount[1]_GND_4_o_add_15_OUT> created at line 279.
+    Found 8-bit 4-to-1 multiplexer for signal <dinBuff> created at line 133.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  52 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <irCtl_top> synthesized.
+
+Synthesizing Unit <clks>.
+    Related source file is "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\clks.vhd".
+        CLK_38K_VAL = 1316
+        CLK_HD_38K_VAL = 658
+    Found 1-bit register for signal <clk38kHdTmp>.
+    Found 11-bit register for signal <clk38kCnt>.
+    Found 11-bit adder for signal <clk38kCnt[10]_GND_5_o_add_4_OUT> created at line 91.
+    Found 11-bit comparator greater for signal <GND_5_o_clk38kCnt[10]_LessThan_2_o> created at line 86
+    Found 11-bit comparator greater for signal <clk38kCnt[10]_PWR_5_o_LessThan_3_o> created at line 86
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <clks> synthesized.
+
+Synthesizing Unit <irDecoder>.
+    Related source file is "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irDecoder.vhd".
+        MIN_ST_PUL = 175000
+        MAX_ST_PUL = 500000
+        MIN_ZERO_VAL = 37500
+        ZO_THRES_VAL = 87500
+        MAX_ONE_VAL = 137500
+        DATA_FIN_VAL = 300000
+    Found 1-bit register for signal <irRxSyncOffset>.
+    Found 1-bit register for signal <irRxSync>.
+    Found 1-bit register for signal <irRxDoneFlg>.
+    Found 1-bit register for signal <irRxErrFlg>.
+    Found 32-bit register for signal <irRxTmp>.
+    Found 32-bit register for signal <IR_RX_DECODE>.
+    Found 2-bit register for signal <decodeRxState>.
+    Found 19-bit register for signal <irRxCnt>.
+    Found 6-bit register for signal <bitInd>.
+    Found finite state machine <FSM_1> for signal <decodeRxState>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 28                                             |
+    | Inputs             | 11                                             |
+    | Outputs            | 3                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | SYS_RST (positive)                             |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | decoderxstate_idle                             |
+    | Power Up State     | decoderxstate_idle                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <bitInd[5]_GND_6_o_add_16_OUT> created at line 178.
+    Found 19-bit adder for signal <irRxCnt[18]_GND_6_o_add_29_OUT> created at line 193.
+    Found 1-bit 4-to-1 multiplexer for signal <decodeRxState[1]_PWR_6_o_Mux_39_o> created at line 129.
+    Found 19-bit 4-to-1 multiplexer for signal <decodeRxState[1]_irRxCnt[18]_wide_mux_40_OUT> created at line 129.
+    Found 19-bit comparator greater for signal <GND_6_o_irRxCnt[18]_LessThan_2_o> created at line 145
+    Found 19-bit comparator greater for signal <irRxCnt[18]_PWR_6_o_LessThan_3_o> created at line 145
+    Found 19-bit comparator greater for signal <GND_6_o_irRxCnt[18]_LessThan_18_o> created at line 179
+    Found 19-bit comparator greater for signal <irRxCnt[18]_GND_6_o_LessThan_19_o> created at line 179
+    Found 19-bit comparator greater for signal <GND_6_o_irRxCnt[18]_LessThan_21_o> created at line 181
+    Found 19-bit comparator greater for signal <irRxCnt[18]_GND_6_o_LessThan_22_o> created at line 181
+    Found 19-bit comparator greater for signal <irRxCnt[18]_PWR_6_o_LessThan_29_o> created at line 192
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  93 D-type flip-flop(s).
+	inferred   7 Comparator(s).
+	inferred  83 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <irDecoder> synthesized.
+
+Synthesizing Unit <irEncoder>.
+    Related source file is "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\irEncoder.vhd".
+        IR_ST_TOT_VAL = 342
+        IR_ST_HIGH_VAL = 171
+        IR_PUL_HIGH_VAL = 22
+        IR_PUL_ZERO_VAL = 43
+        IR_PUL_ONE_VAL = 85
+    Found 1-bit register for signal <irTxTmp>.
+    Found 1-bit register for signal <IR_TX_BUSY>.
+    Found 1-bit register for signal <spiByteOffsetFlg>.
+    Found 32-bit register for signal <irTxData>.
+    Found 6-bit register for signal <irTxNi>.
+    Found 3-bit register for signal <irEncodeState>.
+    Found 9-bit register for signal <irTxCnt>.
+    Found finite state machine <FSM_2> for signal <irEncodeState>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 18                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | SYS_RST (positive)                             |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | irencodestate_idle                             |
+    | Power Up State     | irencodestate_idle                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <irTxNi[5]_GND_8_o_add_26_OUT> created at line 182.
+    Found 9-bit adder for signal <irTxCnt[8]_GND_8_o_add_36_OUT> created at line 205.
+    Found 1-bit 32-to-1 multiplexer for signal <irTxNi[4]_irTxData[31]_Mux_23_o> created at line 179.
+    Found 1-bit 6-to-1 multiplexer for signal <irEncodeState[2]_X_7_o_Mux_43_o> created at line 129.
+    Found 9-bit comparator lessequal for signal <n0019> created at line 148
+    Found 9-bit comparator greater for signal <irTxCnt[8]_PWR_8_o_LessThan_8_o> created at line 148
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  50 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  30 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <irEncoder> synthesized.
+
+Synthesizing Unit <spiSlave>.
+    Related source file is "\\mac\home\Documents\DOCS\projects\PN003_ir_control\code\vhdl\spiSlave.vhd".
+    Found 1-bit register for signal <sclk_offset>.
+    Found 1-bit register for signal <sclk_latch>.
+    Found 3-bit register for signal <bitCount>.
+    Found 3-bit register for signal <bitCount1>.
+    Found 8-bit register for signal <mosiShftReg>.
+    Found 8-bit register for signal <mosiData>.
+    Found 3-bit adder for signal <bitCount[2]_GND_9_o_add_1_OUT> created at line 1241.
+    Found 3-bit adder for signal <bitCount1[2]_GND_9_o_add_7_OUT> created at line 1241.
+    Found 1-bit 8-to-1 multiplexer for signal <misoBuff> created at line 74.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <spiSlave> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 9
+ 11-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 19-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 2
+ 6-bit adder                                           : 2
+ 9-bit adder                                           : 1
+# Registers                                            : 26
+ 1-bit register                                        : 11
+ 11-bit register                                       : 1
+ 17-bit register                                       : 1
+ 19-bit register                                       : 1
+ 2-bit register                                        : 1
+ 3-bit register                                        : 2
+ 32-bit register                                       : 4
+ 6-bit register                                        : 2
+ 8-bit register                                        : 2
+ 9-bit register                                        : 1
+# Comparators                                          : 11
+ 11-bit comparator greater                             : 2
+ 19-bit comparator greater                             : 7
+ 9-bit comparator greater                              : 1
+ 9-bit comparator lessequal                            : 1
+# Multiplexers                                         : 124
+ 1-bit 2-to-1 multiplexer                              : 95
+ 1-bit 32-to-1 multiplexer                             : 1
+ 1-bit 4-to-1 multiplexer                              : 1
+ 1-bit 6-to-1 multiplexer                              : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+ 11-bit 2-to-1 multiplexer                             : 1
+ 19-bit 2-to-1 multiplexer                             : 5
+ 19-bit 4-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 3
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 8
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <clks>.
+The following registers are absorbed into counter <clk38kCnt>: 1 register on signal <clk38kCnt>.
+Unit <clks> synthesized (advanced).
+
+Synthesizing (advanced) Unit <irCtl_top>.
+The following registers are absorbed into counter <dinCount>: 1 register on signal <dinCount>.
+The following registers are absorbed into counter <sysRstCnt>: 1 register on signal <sysRstCnt>.
+Unit <irCtl_top> synthesized (advanced).
+
+Synthesizing (advanced) Unit <irDecoder>.
+The following registers are absorbed into counter <bitInd>: 1 register on signal <bitInd>.
+Unit <irDecoder> synthesized (advanced).
+
+Synthesizing (advanced) Unit <irEncoder>.
+The following registers are absorbed into counter <irTxNi>: 1 register on signal <irTxNi>.
+Unit <irEncoder> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spiSlave>.
+The following registers are absorbed into counter <bitCount>: 1 register on signal <bitCount>.
+The following registers are absorbed into counter <bitCount1>: 1 register on signal <bitCount1>.
+Unit <spiSlave> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 19-bit adder                                          : 1
+ 9-bit adder                                           : 1
+# Counters                                             : 7
+ 11-bit up counter                                     : 1
+ 17-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 2
+ 6-bit up counter                                      : 2
+# Registers                                            : 183
+ Flip-Flops                                            : 183
+# Comparators                                          : 11
+ 11-bit comparator greater                             : 2
+ 19-bit comparator greater                             : 7
+ 9-bit comparator greater                              : 1
+ 9-bit comparator lessequal                            : 1
+# Multiplexers                                         : 118
+ 1-bit 2-to-1 multiplexer                              : 95
+ 1-bit 32-to-1 multiplexer                             : 1
+ 1-bit 4-to-1 multiplexer                              : 1
+ 1-bit 6-to-1 multiplexer                              : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+ 19-bit 2-to-1 multiplexer                             : 5
+ 19-bit 4-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 3
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 8
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <irRxDataState[1:2]> with user encoding.
+-------------------------------------
+ State                   | Encoding
+-------------------------------------
+ irrxdatastate_idle      | 00
+ irrxdatastate_checkdata | 01
+ irrxdatastate_hold      | 10
+-------------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <irDecoderComp/FSM_1> on signal <decodeRxState[1:2]> with user encoding.
+--------------------------------------
+ State                    | Encoding
+--------------------------------------
+ decoderxstate_idle       | 00
+ decoderxstate_startpulse | 01
+ decoderxstate_startread  | 10
+ decoderxstate_read       | 11
+--------------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <irEncoderComp/FSM_2> on signal <irEncodeState[1:3]> with gray encoding.
+-------------------------------------
+ State                   | Encoding
+-------------------------------------
+ irencodestate_idle      | 000
+ irencodestate_startpul  | 001
+ irencodestate_pulsehigh | 011
+ irencodestate_pulsetype | 010
+ irencodestate_pulsezero | 111
+ irencodestate_pulseone  | 110
+-------------------------------------
+
+Optimizing unit <irCtl_top> ...
+
+Optimizing unit <clks> ...
+
+Optimizing unit <irDecoder> ...
+
+Optimizing unit <irEncoder> ...
+
+Optimizing unit <spiSlave> ...
+WARNING:Xst:2677 - Node <irDecoderComp/irRxErrFlg> of sequential type is unconnected in block <irCtl_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block irCtl_top, actual ratio is 17.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 237
+ Flip-Flops                                            : 237
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : irCtl_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 462
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 34
+#      LUT2                        : 55
+#      LUT3                        : 66
+#      LUT4                        : 20
+#      LUT5                        : 82
+#      LUT6                        : 98
+#      MUXCY                       : 44
+#      MUXF7                       : 9
+#      VCC                         : 1
+#      XORCY                       : 47
+# FlipFlops/Latches                : 237
+#      FDC                         : 58
+#      FDCE                        : 126
+#      FDE                         : 51
+#      FDP                         : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 4
+#      OBUF                        : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx4tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             237  out of   4800     4%  
+ Number of Slice LUTs:                  360  out of   2400    15%  
+    Number used as Logic:               360  out of   2400    15%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    400
+   Number with an unused Flip Flop:     163  out of    400    40%  
+   Number with an unused LUT:            40  out of    400    10%  
+   Number of fully used LUT-FF pairs:   197  out of    400    49%  
+   Number of unique control sets:        13
+
+IO Utilization: 
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    102     6%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 237   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.931ns (Maximum Frequency: 144.278MHz)
+   Minimum input arrival time before clock: 2.963ns
+   Maximum output required time after clock: 9.516ns
+   Maximum combinational path delay: 9.051ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 6.931ns (frequency: 144.278MHz)
+  Total number of paths / destination ports: 12813 / 595
+-------------------------------------------------------------------------
+Delay:               6.931ns (Levels of Logic = 4)
+  Source:            irDecoderComp/irRxCnt_1 (FF)
+  Destination:       irDecoderComp/irRxTmp_31 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: irDecoderComp/irRxCnt_1 to irDecoderComp/irRxTmp_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.525   1.296  irDecoderComp/irRxCnt_1 (irDecoderComp/irRxCnt_1)
+     LUT6:I0->O            2   0.254   0.726  irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o9 (irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o9)
+     LUT6:I5->O            2   0.254   0.725  irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o10 (irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o10)
+     MUXF7:S->O            1   0.185   0.910  irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o11_SW1 (N38)
+     LUT6:I3->O           32   0.235   1.519  irDecoderComp/_n0203_inv1 (irDecoderComp/_n0203_inv)
+     FDCE:CE                   0.302          irDecoderComp/irRxTmp_0
+    ----------------------------------------
+    Total                      6.931ns (1.755ns logic, 5.176ns route)
+                                       (25.3% logic, 74.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              2.963ns (Levels of Logic = 2)
+  Source:            CS_N (PAD)
+  Destination:       irRxDataState_FSM_FFd2 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: CS_N to irRxDataState_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.326  CS_N_IBUF (CS_N_IBUF)
+     LUT3:I0->O            1   0.235   0.000  irRxDataState_FSM_FFd2-In1 (irRxDataState_FSM_FFd2-In)
+     FDC:D                     0.074          irRxDataState_FSM_FFd2
+    ----------------------------------------
+    Total                      2.963ns (1.637ns logic, 1.326ns route)
+                                       (55.2% logic, 44.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 80 / 2
+-------------------------------------------------------------------------
+Offset:              9.516ns (Levels of Logic = 4)
+  Source:            sysRstCnt_11 (FF)
+  Destination:       IR_TX (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: sysRstCnt_11 to IR_TX
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.525   1.156  sysRstCnt_11 (sysRstCnt_11)
+     LUT5:I0->O            3   0.254   0.874  PWR_4_o_sysRstCnt[16]_equal_6_o_inv1 (PWR_4_o_sysRstCnt[16]_equal_6_o_inv1)
+     LUT5:I3->O          186   0.250   2.629  PWR_4_o_sysRstCnt[16]_equal_6_o_inv4 (PWR_4_o_sysRstCnt[16]_equal_6_o_inv)
+     LUT3:I0->O            1   0.235   0.681  irEncoderComp/Mmux_IR_TX11 (IR_TX_OBUF)
+     OBUF:I->O                 2.912          IR_TX_OBUF (IR_TX)
+    ----------------------------------------
+    Total                      9.516ns (4.176ns logic, 5.340ns route)
+                                       (43.9% logic, 56.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 9 / 1
+-------------------------------------------------------------------------
+Delay:               9.051ns (Levels of Logic = 6)
+  Source:            CS_N (PAD)
+  Destination:       MISO (PAD)
+
+  Data Path: CS_N to MISO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.553  CS_N_IBUF (CS_N_IBUF)
+     LUT6:I0->O            1   0.254   0.958  Mmux_din2 (din<1>)
+     LUT6:I2->O            1   0.254   0.000  spiSlaveComp/Mmux_misoBuff_3 (spiSlaveComp/Mmux_misoBuff_3)
+     MUXF7:I1->O           1   0.175   0.682  spiSlaveComp/Mmux_misoBuff_2_f7 (spiSlaveComp/misoBuff)
+     LUT2:I1->O            1   0.254   0.681  spiSlaveComp/Mmux_MISO11 (MISO_OBUF)
+     OBUF:I->O                 2.912          MISO_OBUF (MISO)
+    ----------------------------------------
+    Total                      9.051ns (5.177ns logic, 3.874ns route)
+                                       (57.2% logic, 42.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    6.931|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.03 secs
+ 
+--> 
+
+Total memory usage is 4509816 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

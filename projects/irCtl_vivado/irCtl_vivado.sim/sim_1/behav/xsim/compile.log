@@ -1,0 +1,12 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Documents/DOCS/projects/Completed/PN003_ir_control/code/vhdl/clks.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'clks'
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Documents/DOCS/projects/Completed/PN003_ir_control/code/vhdl/irCtl_top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'irCtl_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Documents/DOCS/projects/Completed/PN003_ir_control/code/vhdl/irDecoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'irDecoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Documents/DOCS/projects/Completed/PN003_ir_control/code/vhdl/irEncoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'irEncoder'
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Documents/DOCS/projects/Completed/PN003_ir_control/code/vhdl/spiSlave.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'spiSlave'
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Documents/DOCS/projects/Completed/PN003_ir_control/code/vhdl/irCtl_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'irCtl_tb'

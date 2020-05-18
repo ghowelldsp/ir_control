@@ -1,0 +1,129 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Apr 08 12:35:18 2020
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "CLK" LOCATE = SITE "P84" LEVEL 1;
+COMP "CS_N" LOCATE = SITE "P116" LEVEL 1;
+COMP "MISO" LOCATE = SITE "P114" LEVEL 1;
+COMP "SCLK" LOCATE = SITE "P115" LEVEL 1;
+COMP "MOSI" LOCATE = SITE "P112" LEVEL 1;
+COMP "IR_RX" LOCATE = SITE "P144" LEVEL 1;
+COMP "IR_TX" LOCATE = SITE "P118" LEVEL 1;
+TIMEGRP clk50_grp = BEL "spiData_0" BEL "spiData_1" BEL "spiData_2" BEL
+        "spiData_3" BEL "spiData_4" BEL "spiData_5" BEL "spiData_6" BEL
+        "spiData_7" BEL "spiData_8" BEL "spiData_9" BEL "spiData_10" BEL
+        "spiData_11" BEL "spiData_12" BEL "spiData_13" BEL "spiData_14" BEL
+        "spiData_15" BEL "spiData_16" BEL "spiData_17" BEL "spiData_18" BEL
+        "spiData_19" BEL "spiData_20" BEL "spiData_21" BEL "spiData_22" BEL
+        "spiData_23" BEL "spiData_24" BEL "spiData_25" BEL "spiData_26" BEL
+        "spiData_27" BEL "spiData_28" BEL "spiData_29" BEL "spiData_30" BEL
+        "spiData_31" BEL "irRxDataState_FSM_FFd1" BEL "irRxDataState_FSM_FFd2"
+        BEL "sysRstCnt_0" BEL "sysRstCnt_1" BEL "sysRstCnt_2" BEL
+        "sysRstCnt_3" BEL "sysRstCnt_4" BEL "sysRstCnt_5" BEL "sysRstCnt_6"
+        BEL "sysRstCnt_7" BEL "sysRstCnt_8" BEL "sysRstCnt_9" BEL
+        "sysRstCnt_10" BEL "sysRstCnt_11" BEL "sysRstCnt_12" BEL
+        "sysRstCnt_13" BEL "sysRstCnt_14" BEL "sysRstCnt_15" BEL
+        "sysRstCnt_16" BEL "dinCount_0" BEL "dinCount_1" BEL
+        "clksComp/clk38kCnt_10" BEL "clksComp/clk38kCnt_9" BEL
+        "clksComp/clk38kCnt_8" BEL "clksComp/clk38kCnt_7" BEL
+        "clksComp/clk38kCnt_6" BEL "clksComp/clk38kCnt_5" BEL
+        "clksComp/clk38kCnt_4" BEL "clksComp/clk38kCnt_3" BEL
+        "clksComp/clk38kCnt_2" BEL "clksComp/clk38kCnt_1" BEL
+        "clksComp/clk38kCnt_0" BEL "clksComp/clk38kHdTmp" BEL
+        "irDecoderComp/bitInd_5" BEL "irDecoderComp/bitInd_4" BEL
+        "irDecoderComp/bitInd_3" BEL "irDecoderComp/bitInd_2" BEL
+        "irDecoderComp/bitInd_1" BEL "irDecoderComp/bitInd_0" BEL
+        "irDecoderComp/decodeRxState_FSM_FFd1" BEL
+        "irDecoderComp/decodeRxState_FSM_FFd2" BEL "irDecoderComp/irRxCnt_18"
+        BEL "irDecoderComp/irRxCnt_17" BEL "irDecoderComp/irRxCnt_16" BEL
+        "irDecoderComp/irRxCnt_15" BEL "irDecoderComp/irRxCnt_14" BEL
+        "irDecoderComp/irRxCnt_13" BEL "irDecoderComp/irRxCnt_12" BEL
+        "irDecoderComp/irRxCnt_11" BEL "irDecoderComp/irRxCnt_10" BEL
+        "irDecoderComp/irRxCnt_9" BEL "irDecoderComp/irRxCnt_8" BEL
+        "irDecoderComp/irRxCnt_7" BEL "irDecoderComp/irRxCnt_6" BEL
+        "irDecoderComp/irRxCnt_5" BEL "irDecoderComp/irRxCnt_4" BEL
+        "irDecoderComp/irRxCnt_3" BEL "irDecoderComp/irRxCnt_2" BEL
+        "irDecoderComp/irRxCnt_1" BEL "irDecoderComp/irRxCnt_0" BEL
+        "irDecoderComp/IR_RX_DECODE_31" BEL "irDecoderComp/IR_RX_DECODE_30"
+        BEL "irDecoderComp/IR_RX_DECODE_29" BEL
+        "irDecoderComp/IR_RX_DECODE_28" BEL "irDecoderComp/IR_RX_DECODE_27"
+        BEL "irDecoderComp/IR_RX_DECODE_26" BEL
+        "irDecoderComp/IR_RX_DECODE_25" BEL "irDecoderComp/IR_RX_DECODE_24"
+        BEL "irDecoderComp/IR_RX_DECODE_23" BEL
+        "irDecoderComp/IR_RX_DECODE_22" BEL "irDecoderComp/IR_RX_DECODE_21"
+        BEL "irDecoderComp/IR_RX_DECODE_20" BEL
+        "irDecoderComp/IR_RX_DECODE_19" BEL "irDecoderComp/IR_RX_DECODE_18"
+        BEL "irDecoderComp/IR_RX_DECODE_17" BEL
+        "irDecoderComp/IR_RX_DECODE_16" BEL "irDecoderComp/IR_RX_DECODE_15"
+        BEL "irDecoderComp/IR_RX_DECODE_14" BEL
+        "irDecoderComp/IR_RX_DECODE_13" BEL "irDecoderComp/IR_RX_DECODE_12"
+        BEL "irDecoderComp/IR_RX_DECODE_11" BEL
+        "irDecoderComp/IR_RX_DECODE_10" BEL "irDecoderComp/IR_RX_DECODE_9" BEL
+        "irDecoderComp/IR_RX_DECODE_8" BEL "irDecoderComp/IR_RX_DECODE_7" BEL
+        "irDecoderComp/IR_RX_DECODE_6" BEL "irDecoderComp/IR_RX_DECODE_5" BEL
+        "irDecoderComp/IR_RX_DECODE_4" BEL "irDecoderComp/IR_RX_DECODE_3" BEL
+        "irDecoderComp/IR_RX_DECODE_2" BEL "irDecoderComp/IR_RX_DECODE_1" BEL
+        "irDecoderComp/IR_RX_DECODE_0" BEL "irDecoderComp/irRxTmp_31" BEL
+        "irDecoderComp/irRxTmp_30" BEL "irDecoderComp/irRxTmp_29" BEL
+        "irDecoderComp/irRxTmp_28" BEL "irDecoderComp/irRxTmp_27" BEL
+        "irDecoderComp/irRxTmp_26" BEL "irDecoderComp/irRxTmp_25" BEL
+        "irDecoderComp/irRxTmp_24" BEL "irDecoderComp/irRxTmp_23" BEL
+        "irDecoderComp/irRxTmp_22" BEL "irDecoderComp/irRxTmp_21" BEL
+        "irDecoderComp/irRxTmp_20" BEL "irDecoderComp/irRxTmp_19" BEL
+        "irDecoderComp/irRxTmp_18" BEL "irDecoderComp/irRxTmp_17" BEL
+        "irDecoderComp/irRxTmp_16" BEL "irDecoderComp/irRxTmp_15" BEL
+        "irDecoderComp/irRxTmp_14" BEL "irDecoderComp/irRxTmp_13" BEL
+        "irDecoderComp/irRxTmp_12" BEL "irDecoderComp/irRxTmp_11" BEL
+        "irDecoderComp/irRxTmp_10" BEL "irDecoderComp/irRxTmp_9" BEL
+        "irDecoderComp/irRxTmp_8" BEL "irDecoderComp/irRxTmp_7" BEL
+        "irDecoderComp/irRxTmp_6" BEL "irDecoderComp/irRxTmp_5" BEL
+        "irDecoderComp/irRxTmp_4" BEL "irDecoderComp/irRxTmp_3" BEL
+        "irDecoderComp/irRxTmp_2" BEL "irDecoderComp/irRxTmp_1" BEL
+        "irDecoderComp/irRxTmp_0" BEL "irDecoderComp/irRxSyncOffset" BEL
+        "irDecoderComp/irRxSync" BEL "irEncoderComp/irEncodeState_FSM_FFd1"
+        BEL "irEncoderComp/irEncodeState_FSM_FFd2" BEL
+        "irEncoderComp/irEncodeState_FSM_FFd3" BEL "irEncoderComp/irTxNi_5"
+        BEL "irEncoderComp/irTxNi_4" BEL "irEncoderComp/irTxNi_3" BEL
+        "irEncoderComp/irTxNi_2" BEL "irEncoderComp/irTxNi_1" BEL
+        "irEncoderComp/irTxNi_0" BEL "irEncoderComp/irTxCnt_8" BEL
+        "irEncoderComp/irTxCnt_7" BEL "irEncoderComp/irTxCnt_6" BEL
+        "irEncoderComp/irTxCnt_5" BEL "irEncoderComp/irTxCnt_4" BEL
+        "irEncoderComp/irTxCnt_3" BEL "irEncoderComp/irTxCnt_2" BEL
+        "irEncoderComp/irTxCnt_1" BEL "irEncoderComp/irTxCnt_0" BEL
+        "irEncoderComp/irTxTmp" BEL "irEncoderComp/irTxData_31" BEL
+        "irEncoderComp/irTxData_30" BEL "irEncoderComp/irTxData_29" BEL
+        "irEncoderComp/irTxData_28" BEL "irEncoderComp/irTxData_27" BEL
+        "irEncoderComp/irTxData_26" BEL "irEncoderComp/irTxData_25" BEL
+        "irEncoderComp/irTxData_24" BEL "irEncoderComp/irTxData_23" BEL
+        "irEncoderComp/irTxData_22" BEL "irEncoderComp/irTxData_21" BEL
+        "irEncoderComp/irTxData_20" BEL "irEncoderComp/irTxData_19" BEL
+        "irEncoderComp/irTxData_18" BEL "irEncoderComp/irTxData_17" BEL
+        "irEncoderComp/irTxData_16" BEL "irEncoderComp/irTxData_15" BEL
+        "irEncoderComp/irTxData_14" BEL "irEncoderComp/irTxData_13" BEL
+        "irEncoderComp/irTxData_12" BEL "irEncoderComp/irTxData_11" BEL
+        "irEncoderComp/irTxData_10" BEL "irEncoderComp/irTxData_9" BEL
+        "irEncoderComp/irTxData_8" BEL "irEncoderComp/irTxData_7" BEL
+        "irEncoderComp/irTxData_6" BEL "irEncoderComp/irTxData_5" BEL
+        "irEncoderComp/irTxData_4" BEL "irEncoderComp/irTxData_3" BEL
+        "irEncoderComp/irTxData_2" BEL "irEncoderComp/irTxData_1" BEL
+        "irEncoderComp/irTxData_0" BEL "irEncoderComp/spiByteOffsetFlg" BEL
+        "spiSlaveComp/bitCount1_2" BEL "spiSlaveComp/bitCount1_1" BEL
+        "spiSlaveComp/bitCount1_0" BEL "spiSlaveComp/bitCount_2" BEL
+        "spiSlaveComp/bitCount_1" BEL "spiSlaveComp/bitCount_0" BEL
+        "spiSlaveComp/mosiData_7" BEL "spiSlaveComp/mosiData_6" BEL
+        "spiSlaveComp/mosiData_5" BEL "spiSlaveComp/mosiData_4" BEL
+        "spiSlaveComp/mosiData_3" BEL "spiSlaveComp/mosiData_2" BEL
+        "spiSlaveComp/mosiData_1" BEL "spiSlaveComp/mosiData_0" BEL
+        "spiSlaveComp/sclk_offset" BEL "spiSlaveComp/mosiShftReg_7" BEL
+        "spiSlaveComp/mosiShftReg_6" BEL "spiSlaveComp/mosiShftReg_5" BEL
+        "spiSlaveComp/mosiShftReg_4" BEL "spiSlaveComp/mosiShftReg_3" BEL
+        "spiSlaveComp/mosiShftReg_2" BEL "spiSlaveComp/mosiShftReg_1" BEL
+        "spiSlaveComp/mosiShftReg_0" BEL "spiSlaveComp/sclk_latch" BEL
+        "rxNewData" BEL "irDecoderComp/irRxDoneFlg" BEL
+        "irEncoderComp/IR_TX_BUSY" BEL "CLK_BUFGP/BUFG";
+TIMEGRP sck_grp = BEL "spiSlaveComp/sclk_latch";
+TS_PER_CLK50 = PERIOD TIMEGRP "clk50_grp" 20 ns HIGH 50%;
+TS_PER_SCLK = PERIOD TIMEGRP "sck_grp" 20 ns HIGH 50%;
+SCHEMATIC END;
+

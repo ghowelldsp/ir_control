@@ -1,0 +1,5 @@
+vhdl work "../../code/vhdl/spiSlave.vhd"
+vhdl work "../../code/vhdl/irEncoder.vhd"
+vhdl work "../../code/vhdl/irDecoder.vhd"
+vhdl work "../../code/vhdl/clks.vhd"
+vhdl work "../../code/vhdl/irCtl_top.vhd"

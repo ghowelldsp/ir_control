@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "Z:/Documents/DOCS/projects/PN003_ir_control/projects/irCtl_ise/irCtl_top.xst" -ofn "Z:/Documents/DOCS/projects/PN003_ir_control/projects/irCtl_ise/irCtl_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Z:/Documents/DOCS/projects/PN003_ir_control/code/vhdl/creator.ucf -p xc6slx4-tqg144-2 irCtl_top.ngc irCtl_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Z:/Documents/DOCS/projects/PN003_ir_control/code/vhdl/creator.ucf -p xc6slx4-tqg144-2 irCtl_top.ngc irCtl_top.ngd  
+map -intstyle ise -p xc6slx4-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o irCtl_top_map.ncd irCtl_top.ngd irCtl_top.pcf 
+par -w -intstyle ise -ol high -mt off irCtl_top_map.ncd irCtl_top.ncd irCtl_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml irCtl_top.twx irCtl_top.ncd -o irCtl_top.twr irCtl_top.pcf 
+bitgen -intstyle ise -f irCtl_top.ut irCtl_top.ncd 

@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../code/vhdl/clks.vhd" \
+"../../../../../../code/vhdl/irCtl_top.vhd" \
+"../../../../../../code/vhdl/irDecoder.vhd" \
+"../../../../../../code/vhdl/irEncoder.vhd" \
+"../../../../../../code/vhdl/spiSlave.vhd" \
+"../../../../../../code/vhdl/irCtl_tb.vhd" \
+
+# Do not sort compile order
+nosort

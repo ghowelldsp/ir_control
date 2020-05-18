@@ -1,0 +1,581 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml irCtl_top.twx irCtl_top.ncd -o irCtl_top.twr irCtl_top.pcf
+
+Design file:              irCtl_top.ncd
+Physical constraint file: irCtl_top.pcf
+Device,package,speed:     xc6slx4,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_PER_CLK50 = PERIOD TIMEGRP "clk50_grp" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 12755 paths analyzed, 1141 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.787ns.
+--------------------------------------------------------------------------------
+
+Paths for end point irEncoderComp/irTxCnt_8 (SLICE_X7Y51.CE), 31 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.213ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sysRstCnt_2 (FF)
+  Destination:          irEncoderComp/irTxCnt_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.739ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.655 - 0.668)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sysRstCnt_2 to irEncoderComp/irTxCnt_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y44.CQ       Tcko                  0.525   sysRstCnt<3>
+                                                       sysRstCnt_2
+    SLICE_X1Y44.A1       net (fanout=2)        0.755   sysRstCnt<2>
+    SLICE_X1Y44.A        Tilo                  0.259   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B3       net (fanout=3)        1.065   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B        Tilo                  0.254   irDecoderComp/_n0220_inv
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv4_1
+    SLICE_X0Y54.D5       net (fanout=7)        1.597   PWR_4_o_sysRstCnt[16]_equal_6_o_inv4
+    SLICE_X0Y54.D        Tilo                  0.254   irEncoderComp/_n0188_inv
+                                                       irEncoderComp/_n0188_inv1
+    SLICE_X7Y51.CE       net (fanout=4)        1.622   irEncoderComp/_n0188_inv
+    SLICE_X7Y51.CLK      Tceck                 0.408   irEncoderComp/irTxCnt<8>
+                                                       irEncoderComp/irTxCnt_8
+    -------------------------------------------------  ---------------------------
+    Total                                      6.739ns (1.700ns logic, 5.039ns route)
+                                                       (25.2% logic, 74.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.217ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sysRstCnt_0 (FF)
+  Destination:          irEncoderComp/irTxCnt_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.735ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.655 - 0.668)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sysRstCnt_0 to irEncoderComp/irTxCnt_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y44.AQ       Tcko                  0.525   sysRstCnt<3>
+                                                       sysRstCnt_0
+    SLICE_X1Y44.A2       net (fanout=2)        0.751   sysRstCnt<0>
+    SLICE_X1Y44.A        Tilo                  0.259   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B3       net (fanout=3)        1.065   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B        Tilo                  0.254   irDecoderComp/_n0220_inv
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv4_1
+    SLICE_X0Y54.D5       net (fanout=7)        1.597   PWR_4_o_sysRstCnt[16]_equal_6_o_inv4
+    SLICE_X0Y54.D        Tilo                  0.254   irEncoderComp/_n0188_inv
+                                                       irEncoderComp/_n0188_inv1
+    SLICE_X7Y51.CE       net (fanout=4)        1.622   irEncoderComp/_n0188_inv
+    SLICE_X7Y51.CLK      Tceck                 0.408   irEncoderComp/irTxCnt<8>
+                                                       irEncoderComp/irTxCnt_8
+    -------------------------------------------------  ---------------------------
+    Total                                      6.735ns (1.700ns logic, 5.035ns route)
+                                                       (25.2% logic, 74.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.232ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sysRstCnt_9 (FF)
+  Destination:          irEncoderComp/irTxCnt_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.656ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.077ns (0.655 - 0.732)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sysRstCnt_9 to irEncoderComp/irTxCnt_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y46.BQ       Tcko                  0.525   sysRstCnt<11>
+                                                       sysRstCnt_9
+    SLICE_X1Y46.D2       net (fanout=2)        0.539   sysRstCnt<9>
+    SLICE_X1Y46.D        Tilo                  0.259   PWR_4_o_sysRstCnt[16]_equal_6_o_inv3
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv3
+    SLICE_X2Y46.B2       net (fanout=3)        1.198   PWR_4_o_sysRstCnt[16]_equal_6_o_inv3
+    SLICE_X2Y46.B        Tilo                  0.254   irDecoderComp/_n0220_inv
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv4_1
+    SLICE_X0Y54.D5       net (fanout=7)        1.597   PWR_4_o_sysRstCnt[16]_equal_6_o_inv4
+    SLICE_X0Y54.D        Tilo                  0.254   irEncoderComp/_n0188_inv
+                                                       irEncoderComp/_n0188_inv1
+    SLICE_X7Y51.CE       net (fanout=4)        1.622   irEncoderComp/_n0188_inv
+    SLICE_X7Y51.CLK      Tceck                 0.408   irEncoderComp/irTxCnt<8>
+                                                       irEncoderComp/irTxCnt_8
+    -------------------------------------------------  ---------------------------
+    Total                                      6.656ns (1.700ns logic, 4.956ns route)
+                                                       (25.5% logic, 74.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point irDecoderComp/irRxTmp_7 (SLICE_X6Y35.CE), 95 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.231ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               irDecoderComp/irRxCnt_3 (FF)
+  Destination:          irDecoderComp/irRxTmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.660ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.074ns (0.593 - 0.667)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: irDecoderComp/irRxCnt_3 to irDecoderComp/irRxTmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y32.AQ       Tcko                  0.525   irDecoderComp/irRxCnt<6>
+                                                       irDecoderComp/irRxCnt_3
+    SLICE_X2Y34.B1       net (fanout=6)        1.188   irDecoderComp/irRxCnt<3>
+    SLICE_X2Y34.B        Tilo                  0.254   irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o5
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_LessThan_18_o51
+    SLICE_X2Y34.A5       net (fanout=2)        0.254   irDecoderComp/GND_6_o_irRxCnt[18]_LessThan_18_o5
+    SLICE_X2Y34.A        Tilo                  0.254   irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o5
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_AND_72_o6
+    SLICE_X1Y38.A3       net (fanout=1)        1.188   irDecoderComp/GND_6_o_irRxCnt[18]_AND_72_o6
+    SLICE_X1Y38.A        Tilo                  0.259   irDecoderComp/GND_6_o_irRxCnt[18]_AND_72_o2
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_AND_72_o8
+    SLICE_X4Y38.B6       net (fanout=3)        0.815   irDecoderComp/GND_6_o_irRxCnt[18]_AND_72_o
+    SLICE_X4Y38.B        Tilo                  0.254   irDecoderComp/irRxTmp<31>
+                                                       irDecoderComp/_n0203_inv1
+    SLICE_X6Y35.CE       net (fanout=9)        1.356   irDecoderComp/_n0203_inv
+    SLICE_X6Y35.CLK      Tceck                 0.313   irDecoderComp/irRxTmp<10>
+                                                       irDecoderComp/irRxTmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.660ns (1.859ns logic, 4.801ns route)
+                                                       (27.9% logic, 72.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.456ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               irDecoderComp/irRxSync (FF)
+  Destination:          irDecoderComp/irRxTmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.372ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.137ns (0.593 - 0.730)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: irDecoderComp/irRxSync to irDecoderComp/irRxTmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y59.AQ       Tcko                  0.430   irDecoderComp/irRxSync
+                                                       irDecoderComp/irRxSync
+    SLICE_X4Y36.C4       net (fanout=9)        2.881   irDecoderComp/irRxSync
+    SLICE_X4Y36.CMUX     Tilo                  0.326   irDecoderComp/irRxDoneFlg
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o11_SW2
+    SLICE_X4Y38.B2       net (fanout=1)        0.812   N39
+    SLICE_X4Y38.B        Tilo                  0.254   irDecoderComp/irRxTmp<31>
+                                                       irDecoderComp/_n0203_inv1
+    SLICE_X6Y35.CE       net (fanout=9)        1.356   irDecoderComp/_n0203_inv
+    SLICE_X6Y35.CLK      Tceck                 0.313   irDecoderComp/irRxTmp<10>
+                                                       irDecoderComp/irRxTmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.372ns (1.323ns logic, 5.049ns route)
+                                                       (20.8% logic, 79.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.628ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               irDecoderComp/irRxCnt_8 (FF)
+  Destination:          irDecoderComp/irRxTmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.266ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.071ns (0.593 - 0.664)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: irDecoderComp/irRxCnt_8 to irDecoderComp/irRxTmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y34.BQ       Tcko                  0.430   irDecoderComp/irRxCnt<10>
+                                                       irDecoderComp/irRxCnt_8
+    SLICE_X2Y35.D1       net (fanout=9)        1.281   irDecoderComp/irRxCnt<8>
+    SLICE_X2Y35.D        Tilo                  0.254   irDecoderComp/irRxSyncOffset
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o8
+    SLICE_X2Y35.B1       net (fanout=2)        0.540   irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o8
+    SLICE_X2Y35.B        Tilo                  0.254   irDecoderComp/irRxSyncOffset
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o10
+    SLICE_X4Y38.CX       net (fanout=2)        0.962   irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o10
+    SLICE_X4Y38.CMUX     Tcxc                  0.182   irDecoderComp/irRxTmp<31>
+                                                       irDecoderComp/GND_6_o_irRxCnt[18]_AND_9_o11_SW1
+    SLICE_X4Y38.B5       net (fanout=1)        0.440   N38
+    SLICE_X4Y38.B        Tilo                  0.254   irDecoderComp/irRxTmp<31>
+                                                       irDecoderComp/_n0203_inv1
+    SLICE_X6Y35.CE       net (fanout=9)        1.356   irDecoderComp/_n0203_inv
+    SLICE_X6Y35.CLK      Tceck                 0.313   irDecoderComp/irRxTmp<10>
+                                                       irDecoderComp/irRxTmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.266ns (1.687ns logic, 4.579ns route)
+                                                       (26.9% logic, 73.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point irEncoderComp/irTxCnt_7 (SLICE_X7Y51.CE), 31 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.256ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sysRstCnt_2 (FF)
+  Destination:          irEncoderComp/irTxCnt_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.696ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.655 - 0.668)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sysRstCnt_2 to irEncoderComp/irTxCnt_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y44.CQ       Tcko                  0.525   sysRstCnt<3>
+                                                       sysRstCnt_2
+    SLICE_X1Y44.A1       net (fanout=2)        0.755   sysRstCnt<2>
+    SLICE_X1Y44.A        Tilo                  0.259   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B3       net (fanout=3)        1.065   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B        Tilo                  0.254   irDecoderComp/_n0220_inv
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv4_1
+    SLICE_X0Y54.D5       net (fanout=7)        1.597   PWR_4_o_sysRstCnt[16]_equal_6_o_inv4
+    SLICE_X0Y54.D        Tilo                  0.254   irEncoderComp/_n0188_inv
+                                                       irEncoderComp/_n0188_inv1
+    SLICE_X7Y51.CE       net (fanout=4)        1.622   irEncoderComp/_n0188_inv
+    SLICE_X7Y51.CLK      Tceck                 0.365   irEncoderComp/irTxCnt<8>
+                                                       irEncoderComp/irTxCnt_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.696ns (1.657ns logic, 5.039ns route)
+                                                       (24.7% logic, 75.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.260ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sysRstCnt_0 (FF)
+  Destination:          irEncoderComp/irTxCnt_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.692ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.655 - 0.668)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sysRstCnt_0 to irEncoderComp/irTxCnt_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y44.AQ       Tcko                  0.525   sysRstCnt<3>
+                                                       sysRstCnt_0
+    SLICE_X1Y44.A2       net (fanout=2)        0.751   sysRstCnt<0>
+    SLICE_X1Y44.A        Tilo                  0.259   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B3       net (fanout=3)        1.065   PWR_4_o_sysRstCnt[16]_equal_6_o_inv2
+    SLICE_X2Y46.B        Tilo                  0.254   irDecoderComp/_n0220_inv
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv4_1
+    SLICE_X0Y54.D5       net (fanout=7)        1.597   PWR_4_o_sysRstCnt[16]_equal_6_o_inv4
+    SLICE_X0Y54.D        Tilo                  0.254   irEncoderComp/_n0188_inv
+                                                       irEncoderComp/_n0188_inv1
+    SLICE_X7Y51.CE       net (fanout=4)        1.622   irEncoderComp/_n0188_inv
+    SLICE_X7Y51.CLK      Tceck                 0.365   irEncoderComp/irTxCnt<8>
+                                                       irEncoderComp/irTxCnt_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.692ns (1.657ns logic, 5.035ns route)
+                                                       (24.8% logic, 75.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.275ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sysRstCnt_9 (FF)
+  Destination:          irEncoderComp/irTxCnt_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.613ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.077ns (0.655 - 0.732)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sysRstCnt_9 to irEncoderComp/irTxCnt_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y46.BQ       Tcko                  0.525   sysRstCnt<11>
+                                                       sysRstCnt_9
+    SLICE_X1Y46.D2       net (fanout=2)        0.539   sysRstCnt<9>
+    SLICE_X1Y46.D        Tilo                  0.259   PWR_4_o_sysRstCnt[16]_equal_6_o_inv3
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv3
+    SLICE_X2Y46.B2       net (fanout=3)        1.198   PWR_4_o_sysRstCnt[16]_equal_6_o_inv3
+    SLICE_X2Y46.B        Tilo                  0.254   irDecoderComp/_n0220_inv
+                                                       PWR_4_o_sysRstCnt[16]_equal_6_o_inv4_1
+    SLICE_X0Y54.D5       net (fanout=7)        1.597   PWR_4_o_sysRstCnt[16]_equal_6_o_inv4
+    SLICE_X0Y54.D        Tilo                  0.254   irEncoderComp/_n0188_inv
+                                                       irEncoderComp/_n0188_inv1
+    SLICE_X7Y51.CE       net (fanout=4)        1.622   irEncoderComp/_n0188_inv
+    SLICE_X7Y51.CLK      Tceck                 0.365   irEncoderComp/irTxCnt<8>
+                                                       irEncoderComp/irTxCnt_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.613ns (1.657ns logic, 4.956ns route)
+                                                       (25.1% logic, 74.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_PER_CLK50 = PERIOD TIMEGRP "clk50_grp" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point irEncoderComp/irTxNi_2 (SLICE_X3Y54.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.424ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               irEncoderComp/irTxNi_1 (FF)
+  Destination:          irEncoderComp/irTxNi_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.424ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: irEncoderComp/irTxNi_1 to irEncoderComp/irTxNi_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y54.CQ       Tcko                  0.198   irEncoderComp/irTxNi<3>
+                                                       irEncoderComp/irTxNi_1
+    SLICE_X3Y54.C5       net (fanout=14)       0.071   irEncoderComp/irTxNi<1>
+    SLICE_X3Y54.CLK      Tah         (-Th)    -0.155   irEncoderComp/irTxNi<3>
+                                                       irEncoderComp/Mcount_irTxNi_xor<2>11
+                                                       irEncoderComp/irTxNi_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.424ns (0.353ns logic, 0.071ns route)
+                                                       (83.3% logic, 16.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point irDecoderComp/IR_RX_DECODE_23 (SLICE_X4Y39.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.425ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               irDecoderComp/irRxDoneFlg (FF)
+  Destination:          irDecoderComp/IR_RX_DECODE_23 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.430ns (Levels of Logic = 0)
+  Clock Path Skew:      0.005ns (0.096 - 0.091)
+  Source Clock:         CLK_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: irDecoderComp/irRxDoneFlg to irDecoderComp/IR_RX_DECODE_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y36.DQ       Tcko                  0.234   irDecoderComp/irRxDoneFlg
+                                                       irDecoderComp/irRxDoneFlg
+    SLICE_X4Y39.CE       net (fanout=10)       0.304   irDecoderComp/irRxDoneFlg
+    SLICE_X4Y39.CLK      Tckce       (-Th)     0.108   irDecoderComp/IR_RX_DECODE<23>
+                                                       irDecoderComp/IR_RX_DECODE_23
+    -------------------------------------------------  ---------------------------
+    Total                                      0.430ns (0.126ns logic, 0.304ns route)
+                                                       (29.3% logic, 70.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point irDecoderComp/IR_RX_DECODE_22 (SLICE_X4Y39.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.429ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               irDecoderComp/irRxDoneFlg (FF)
+  Destination:          irDecoderComp/IR_RX_DECODE_22 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.434ns (Levels of Logic = 0)
+  Clock Path Skew:      0.005ns (0.096 - 0.091)
+  Source Clock:         CLK_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: irDecoderComp/irRxDoneFlg to irDecoderComp/IR_RX_DECODE_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y36.DQ       Tcko                  0.234   irDecoderComp/irRxDoneFlg
+                                                       irDecoderComp/irRxDoneFlg
+    SLICE_X4Y39.CE       net (fanout=10)       0.304   irDecoderComp/irRxDoneFlg
+    SLICE_X4Y39.CLK      Tckce       (-Th)     0.104   irDecoderComp/IR_RX_DECODE<23>
+                                                       irDecoderComp/IR_RX_DECODE_22
+    -------------------------------------------------  ---------------------------
+    Total                                      0.434ns (0.130ns logic, 0.304ns route)
+                                                       (30.0% logic, 70.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_PER_CLK50 = PERIOD TIMEGRP "clk50_grp" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: CLK_BUFGP/BUFG/I0
+  Logical resource: CLK_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y8.I0
+  Clock network: CLK_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: sysRstCnt<3>/CLK
+  Logical resource: sysRstCnt_0/CK
+  Location pin: SLICE_X0Y44.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: sysRstCnt<3>/CLK
+  Logical resource: sysRstCnt_1/CK
+  Location pin: SLICE_X0Y44.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_PER_SCLK = PERIOD TIMEGRP "sck_grp" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   0.470ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_PER_SCLK = PERIOD TIMEGRP "sck_grp" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: spiSlaveComp/sclk_latch/CLK
+  Logical resource: spiSlaveComp/sclk_latch/CK
+  Location pin: SLICE_X9Y59.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.235ns (Trpw)
+  Physical resource: spiSlaveComp/sclk_latch/SR
+  Logical resource: spiSlaveComp/sclk_latch/SR
+  Location pin: SLICE_X9Y59.SR
+  Clock network: PWR_4_o_sysRstCnt[16]_equal_6_o_inv
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    6.787|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 12755 paths, 0 nets, and 1426 connections
+
+Design statistics:
+   Minimum period:   6.787ns{1}   (Maximum frequency: 147.340MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Apr 08 12:35:40 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4554 MB
+
+
+

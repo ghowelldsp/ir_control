@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=Z:\Documents\DOCS\projects\PN003_ir_control\projects\irCtl_ise\irCtl_top.ncd
+OUTFILE=Z:\Documents\DOCS\projects\PN003_ir_control\projects\irCtl_ise\irCtl_top.bit
+FAMILY=Spartan6
+PART=xc6slx4-2tqg144
+WORKINGDIR=Z:\Documents\DOCS\projects\PN003_ir_control\projects\irCtl_ise
+LICENSE=WebPack
+USER_INFO=__0_0_0
