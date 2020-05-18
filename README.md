@@ -21,6 +21,6 @@ After the commands have been learned, the `write [cmdName]` function can be used
 5. Run `./irCtl` to the see the full usage statement.
 
 ## General Info
-The program is currently setup to learn the **Volume Up**, **Volume Down**, **Channel Up**, **Channel Down**, **Mute** and **Power** commands. This can be modified by adding, removing or altering the names at the top of the the `irCtl.c` file. Note that both `cmdNames` and `cmdNameShort` needs to have the same number of commands, the exact name of commands can be specifed by the user.
+The program is currently setup to learn the **Volume Up**, **Volume Down**, **Channel Up**, **Channel Down**, **Mute** and **Power** commands. This can be modified by adding, removing or altering the names at the top of the the `irCtl.c` file. Note that both `cmdNames` and `cmdNameShort` needs to have the same number of commands, the exact name of commands can be specified by the user.
 
 Disclaimer: It is not a fool proof system, more of a proof of concept. Errors can occurs if a button has been pressed on the remote before running the 'learn' function. I will make modifications, but would prefer that any modifications are made by the requesting user, and subitted in a PR.

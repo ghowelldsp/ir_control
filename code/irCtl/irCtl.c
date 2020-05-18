@@ -245,6 +245,8 @@ int parseArgs (int argc, char *argv[]) {
 			progCode = 1;
 		} else if (!strcmp(argv[1], "learn")) {
 			progCode = 2;
+		} else if (!strcmp(argv[1], "usage")) {
+			usage(argv[0]);
 		} else {
 			usageErr(argv[0]);
 		}
